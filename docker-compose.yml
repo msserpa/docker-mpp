@@ -5,7 +5,7 @@ services:
   boca:
     build: .
     ports:
-      - 80:80
+      - 8080:80
     depends_on:
       - postgres-boca
     environment:
@@ -19,7 +19,7 @@ services:
       - boca-network  
     restart: always
   postgres-boca:
-    image: postgres
+    image: postgres:10
     container_name: postgres-boca
     restart: always
     ports:
